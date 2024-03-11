@@ -1,7 +1,8 @@
 package;
 
-import flixel.FlxSprite;
-import flixel.text.FlxText;
+import api.Save;
+import api.Sprite;
+import api.Text;
 import llua.Lua;
 import llua.LuaL;
 import llua.State;
@@ -35,87 +36,9 @@ class LuaCode
 
 	function init()
 	{
-		GetLua.enter.addcallback("makeText", function(tag:String, x:Float = 0, y:Float = 0, fliedWidth:Float = 0, text:String = "", size:Int = 8)
-		{
-			tag.replace('.', '');
-			var text:FlxText = new FlxText(x, y, fliedWidth, text, size);
-			PlayState.textss.set(tag, text);
-			text.active = true;
-		});
-		GetLua.enter.addcallback("scaleText", function(tag:String, x:Float = 0, y:Float)
-		{
-			if (PlayState.textss.exists(tag))
-			{
-				PlayState.textss.get(tag).scale.set(x, y);
-				return;
-			}
-		});
-		GetLua.enter.addcallback("scrollFactorText", function(tag:String, x:Float = 0, y:Float = 0)
-		{
-			if (PlayState.textss.exists(tag))
-			{
-				PlayState.textss.get(tag).scrollFactor.set(x, y);
-			}
-		});
-		GetLua.enter.addcallback("sizeText", function(tag:String, size:Int = 8)
-		{
-			if (PlayState.textss.exists(tag))
-			{
-				PlayState.textss.get(tag).size = size;
-			}
-		});
-		GetLua.enter.addcallback("makeFlxGraphic", function(x:Float = 0, y:Float = 0, width:Int = 0, height:Int = 0, color:Int = 0)
-		{
-			new FlxSprite(x, y).makeGraphic(width, height, color);
-		});
-		GetLua.enter.addcallback("makeSprite", function(tag:String, image:String, x:Float = 0, y:Float = 0)
-		{
-			tag.replace('.', '');
-			var sprite:SpriteGame = new SpriteGame(x, y, Paths.image(image));
-			PlayState.spritess.set(tag, sprite);
-			sprite.active = true;
-		});
-		GetLua.enter.addcallback("scaleSprite", function(tag:String, x:Float = 0, y:Float = 0)
-		{
-			if (PlayState.spritess.exists(tag))
-			{
-				PlayState.spritess.get(tag).scale.set(x, y);
-				return;
-			}
-		});
-		GetLua.enter.addcallback("scrollFactorSprite", function(tag:String, x:Float = 0, y:Float = 0)
-		{
-			if (PlayState.spritess.exists(tag))
-			{
-				PlayState.spritess.get(tag).scrollFactor.set(x, y);
-				return;
-			}
-		});
-		GetLua.enter.addcallback("addSprite", function(tag:String)
-		{
-			if (PlayState.spritess.exists(tag))
-			{
-				var sprites:SpriteGame = PlayState.spritess.get(tag);
-				if (sprites.wasAdded == false)
-				{
-					PlayState.init.add(sprites);
-					sprites.wasAdded = true;
-				}
-			}
-		});
-		GetLua.enter.addcallback("removeSprite", function(tag:String)
-		{
-			if (PlayState.spritess.exists(tag) == false)
-			{
-				return;
-			}
-			var sprites:SpriteGame = PlayState.spritess.get(tag);
-			if (sprites.wasAdded)
-			{
-				PlayState.init.remove(sprites);
-				sprites.wasAdded = false;
-			}
-		});
+		Sprite.init();
+		Text.init();
+		Save.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic

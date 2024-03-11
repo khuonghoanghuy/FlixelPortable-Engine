@@ -4,6 +4,7 @@ import flixel.FlxState;
 import flixel.sound.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
+import game.*;
 import sys.FileSystem;
 
 using StringTools;
@@ -13,7 +14,7 @@ class PlayState extends FlxState
 	public static var luaArray:Array<LuaCode> = [];
 
 	public static var spritess:Map<String, SpriteGame> = new Map<String, SpriteGame>();
-	public static var textss:Map<String, FlxText> = new Map<String, FlxText>();
+	public static var textss:Map<String, TextGame> = new Map<String, TextGame>();
 	public static var tweenss:Map<String, FlxTween> = new Map<String, FlxTween>();
 	public static var soundss:Map<String, FlxSound> = new Map<String, FlxSound>();
 	public static var musicc:Map<String, FlxSound> = new Map<String, FlxSound>();
