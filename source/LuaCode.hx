@@ -1,5 +1,6 @@
 package;
 
+import api.Haxe;
 import api.Save;
 import api.Sprite;
 import api.Text;
@@ -39,6 +40,7 @@ class LuaCode
 		Sprite.init();
 		Text.init();
 		Save.init();
+		Haxe.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic
