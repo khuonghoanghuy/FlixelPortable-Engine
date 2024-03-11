@@ -1,0 +1,4 @@
+export/
+.vscode/
+assets/data/main.lua
+assets/images/menuBG.png
