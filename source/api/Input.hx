@@ -4,7 +4,7 @@ import flixel.FlxG;
 
 class Input
 {
-	public static function init()
+	public static function init():Void
 	{
 		trace("input init!");
 
@@ -30,7 +30,7 @@ class Input
 
 		GetLua.enter.addcallback("mousePressed", function(e:String)
 		{
-			var buttonthingie = null;
+			var buttonthingie = FlxG.mouse.pressed;
 			switch (e.toLowerCase())
 			{
 				case "left":
@@ -45,7 +45,7 @@ class Input
 
 		GetLua.enter.addcallback("mouseJustPressed", function(e:String)
 		{
-			var buttonthingie = null;
+			var buttonthingie = FlxG.mouse.justPressed;
 			switch (e.toLowerCase())
 			{
 				case "left":
@@ -60,7 +60,7 @@ class Input
 
 		GetLua.enter.addcallback("mouseRelease", function(e:String)
 		{
-			var buttonthingie = null;
+			var buttonthingie = FlxG.mouse.released;
 			switch (e.toLowerCase())
 			{
 				case "left":
@@ -75,7 +75,7 @@ class Input
 
 		GetLua.enter.addcallback("mouseJustRelease", function(e:String)
 		{
-			var buttonthingie = null;
+			var buttonthingie = FlxG.mouse.justReleased;
 			switch (e.toLowerCase())
 			{
 				case "left":

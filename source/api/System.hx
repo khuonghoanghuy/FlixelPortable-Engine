@@ -25,5 +25,25 @@ class System
 		{
 			return FlxG.stage.addChild(new FPS(x, y, color));
 		});
+		GetLua.enter.addcallback("resizeWindow", function(width:Int = 640, height:Int = 480)
+		{
+			FlxG.resizeWindow(width, height);
+			return;
+		});
+		GetLua.enter.addcallback("resizeGame", function(width:Int = 640, height:Int = 480)
+		{
+			FlxG.resizeGame(width, height);
+			return;
+		});
+		GetLua.enter.addcallback("drawFramerate", function(newFPS:Int = 60)
+		{
+			FlxG.drawFramerate = newFPS;
+			return;
+		});
+		GetLua.enter.addcallback("updateFramerate", function(newFPS:Int = 60)
+		{
+			FlxG.updateFramerate = newFPS;
+			return;
+		});
 	}
 }
