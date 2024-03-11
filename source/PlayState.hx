@@ -2,9 +2,9 @@ package;
 
 import flixel.FlxState;
 import flixel.sound.FlxSound;
-import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import game.*;
+import hxcodec.flixel.FlxVideo;
 import sys.FileSystem;
 
 using StringTools;
@@ -20,6 +20,8 @@ class PlayState extends FlxState
 	public static var musicc:Map<String, FlxSound> = new Map<String, FlxSound>();
 
 	public static var init:PlayState = null;
+
+	static var video:FlxVideo;
 
 	// took from psych engine ;-;
 	public function callOnLuas(event:String, args:Array<Dynamic>):Dynamic
@@ -49,6 +51,8 @@ class PlayState extends FlxState
 	{
 		init = this;
 
+		video = new FlxVideo();
+
 		var filesPushed:Array<String> = [];
 		var foldersToCheck:Array<String> = [Paths.data('')];
 
@@ -77,5 +81,24 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		callOnLuas("update", [elapsed]);
+	}
+
+	public static function playVideo(videoToPlay:String, shouldLoop:Bool = false):Void
+	{
+		if (FileSystem.exists(Paths.video(videoToPlay)))
+		{
+			video.play(Paths.video(videoToPlay), shouldLoop);
+			video.onEndReached.add(function()
+			{
+				video.dispose();
+				return;
+			}, true);
+		}
+		else
+		{
+			trace(videoToPlay + " not found!");
+			return;
+		}
+		return;
 	}
 }

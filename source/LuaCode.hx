@@ -1,6 +1,7 @@
 package;
 
 import api.Haxe;
+import api.Keyboard;
 import api.Save;
 import api.Sound;
 import api.Sprite;
@@ -45,6 +46,7 @@ class LuaCode
 		Haxe.init();
 		Sound.init();
 		Video.init();
+		Keyboard.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic
