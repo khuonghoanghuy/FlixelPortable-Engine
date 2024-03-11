@@ -57,6 +57,13 @@ class LuaCode
 				PlayState.textss.get(tag).scrollFactor.set(x, y);
 			}
 		});
+		GetLua.enter.addcallback("sizeText", function(tag:String, size:Int = 8)
+		{
+			if (PlayState.textss.exists(tag))
+			{
+				PlayState.textss.get(tag).size = size;
+			}
+		});
 		GetLua.enter.addcallback("makeFlxGraphic", function(x:Float = 0, y:Float = 0, width:Int = 0, height:Int = 0, color:Int = 0)
 		{
 			new FlxSprite(x, y).makeGraphic(width, height, color);
