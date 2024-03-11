@@ -14,7 +14,7 @@ class Text
 			PlayState.textss.set(tag, text);
 			text.active = true;
 		});
-		GetLua.enter.addcallback("scaleText", function(tag:String, x:Float = 0, y:Float)
+		GetLua.enter.addcallback("scaleText", function(tag:String, x:Float = 0, y:Float = 0)
 		{
 			if (PlayState.textss.exists(tag))
 			{
