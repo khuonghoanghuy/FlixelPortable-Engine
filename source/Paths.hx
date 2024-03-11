@@ -26,4 +26,9 @@ class Paths
 	{
 		return file('music/$name');
 	}
+
+	inline public static function video(name:String):String
+	{
+		return file('video/$name.mp4');
+	}
 }

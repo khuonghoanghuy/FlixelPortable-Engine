@@ -5,6 +5,8 @@ import game.TextGame;
 
 class Text
 {
+	static var aliText:FlxTextAlign;
+
 	public static function init()
 	{
 		GetLua.enter.addcallback("makeText", function(tag:String, x:Float = 0, y:Float = 0, fliedWidth:Float = 0, text:String = "", size:Int = 8)
@@ -42,8 +44,6 @@ class Text
 		{
 			if (PlayState.textss.exists(tag))
 			{
-				var aliText:FlxTextAlign;
-
 				switch (alignment.toLowerCase())
 				{
 					case "left":

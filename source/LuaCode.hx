@@ -2,8 +2,10 @@ package;
 
 import api.Haxe;
 import api.Save;
+import api.Sound;
 import api.Sprite;
 import api.Text;
+import api.Video;
 import llua.Lua;
 import llua.LuaL;
 import llua.State;
@@ -41,6 +43,8 @@ class LuaCode
 		Text.init();
 		Save.init();
 		Haxe.init();
+		Sound.init();
+		Video.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic
