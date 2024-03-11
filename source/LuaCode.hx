@@ -5,6 +5,7 @@ import api.Input;
 import api.Save;
 import api.Sound;
 import api.Sprite;
+import api.System;
 import api.Text;
 import api.Video;
 import llua.Lua;
@@ -47,6 +48,7 @@ class LuaCode
 		Sound.init();
 		Video.init();
 		Input.init();
+		System.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic

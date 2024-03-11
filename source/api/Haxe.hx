@@ -13,6 +13,8 @@ class Haxe
 
 	public static function init()
 	{
+		trace("haxe init!");
+
 		// @:privateAccess
 		interp = new Interp();
 		parser = new Parser();

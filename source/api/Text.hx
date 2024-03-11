@@ -9,6 +9,8 @@ class Text
 
 	public static function init()
 	{
+		trace("text init!");
+
 		GetLua.enter.addcallback("makeText", function(tag:String, x:Float = 0, y:Float = 0, fliedWidth:Float = 0, text:String = "", size:Int = 8)
 		{
 			tag.replace('.', '');

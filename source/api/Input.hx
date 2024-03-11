@@ -6,6 +6,8 @@ class Input
 {
 	public static function init()
 	{
+		trace("input init!");
+
 		GetLua.enter.addcallback("keyPressed", function(e:String)
 		{
 			return Reflect.getProperty(FlxG.keys.pressed, e);

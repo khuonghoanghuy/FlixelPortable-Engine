@@ -7,6 +7,8 @@ class Sprite
 {
 	public static function init()
 	{
+		trace("sprite init!");
+
 		GetLua.enter.addcallback("makeFlxGraphic", function(x:Float = 0, y:Float = 0, width:Int = 0, height:Int = 0, color:Int = 0)
 		{
 			new FlxSprite(x, y).makeGraphic(width, height, color);

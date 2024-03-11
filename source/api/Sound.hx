@@ -6,6 +6,8 @@ class Sound
 {
 	public static function init()
 	{
+		trace("sound init!");
+
 		GetLua.enter.addVar("toggleMuted", FlxG.sound.toggleMuted);
 		GetLua.enter.addVar("soundTrayEnabled", FlxG.sound.soundTrayEnabled);
 
