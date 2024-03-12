@@ -36,6 +36,22 @@ class Sprite
 				return;
 			}
 		});
+		GetLua.enter.addcallback("alphaSprite", function(tag:String, alpha:Float = 1.0)
+		{
+			if (PlayState.spritess.exists(tag))
+			{
+				PlayState.spritess.get(tag).alpha = alpha;
+				return;
+			}
+		});
+		GetLua.enter.addcallback("angleSprite", function(tag:String, angle:Float = 1.0)
+		{
+			if (PlayState.spritess.exists(tag))
+			{
+				PlayState.spritess.get(tag).angle = angle;
+				return;
+			}
+		});
 		GetLua.enter.addcallback("addSprite", function(tag:String)
 		{
 			if (PlayState.spritess.exists(tag))
