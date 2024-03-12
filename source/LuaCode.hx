@@ -1,5 +1,6 @@
 package;
 
+import api.General;
 import api.Haxe;
 import api.Input;
 import api.Save;
@@ -49,6 +50,7 @@ class LuaCode
 		Video.init();
 		Input.init();
 		System.init();
+		General.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic
