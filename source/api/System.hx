@@ -45,5 +45,20 @@ class System
 			FlxG.updateFramerate = newFPS;
 			return;
 		});
+		GetLua.enter.addcallback("exit", function(code:Int = 0)
+		{
+			openfl.system.System.exit(code);
+			return;
+		});
+		GetLua.enter.addcallback("pause", function()
+		{
+			openfl.system.System.pause();
+			return;
+		});
+		GetLua.enter.addcallback("garbageCollect", function()
+		{
+			openfl.system.System.gc();
+			return;
+		});
 	}
 }
