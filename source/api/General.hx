@@ -6,31 +6,30 @@ class General
 	{
 		trace("general init!");
 
-		// fully copy from fnf psych engine
 		GetLua.enter.addcallback("getProperty", function(variables:String)
 		{
-			var killMe:Array<String> = variables.split('.');
-			if (killMe.length > 1)
+			var arg:Array<String> = variables.split('.');
+			if (variables.length > 1)
 			{
-				var coverMeInPiss:Dynamic = null;
-				if (PlayState.spritess.exists(killMe[0]))
+				var dynathing:Dynamic;
+				if (PlayState.spritess.exists(arg[0]))
 				{
-					coverMeInPiss = PlayState.spritess.get(killMe[0]);
+					dynathing = PlayState.spritess.get(arg[0]);
 				}
-				else if (PlayState.textss.exists(killMe[0]))
+				else if (PlayState.textss.exists(arg[0]))
 				{
-					coverMeInPiss = PlayState.textss.get(killMe[0]);
+					dynathing = PlayState.textss.get(arg[0]);
 				}
 				else
 				{
-					coverMeInPiss = Reflect.getProperty(PlayState.init, killMe[0]);
+					return Reflect.getProperty(PlayState.init, variables);
 				}
 
-				for (i in 1...killMe.length - 1)
+				for (i in 1...arg.length - 1)
 				{
-					coverMeInPiss = Reflect.getProperty(coverMeInPiss, killMe[i]);
+					dynathing = Reflect.getProperty(dynathing, arg[i]);
 				}
-				return Reflect.getProperty(coverMeInPiss, killMe[killMe.length - 1]);
+				return Reflect.getProperty(dynathing, arg[arg.length - 1]);
 			}
 			return Reflect.getProperty(PlayState.init, variables);
 		});
