@@ -8,6 +8,7 @@ import api.Sound;
 import api.Sprite;
 import api.System;
 import api.Text;
+import api.Tween;
 import api.Video;
 import llua.Lua;
 import llua.LuaL;
@@ -51,6 +52,7 @@ class LuaCode
 		Input.init();
 		System.init();
 		General.init();
+		Tween.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic
