@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxCamera;
 import flixel.FlxState;
 import flixel.sound.FlxSound;
 import flixel.tweens.FlxTween;
@@ -18,6 +19,8 @@ class PlayState extends FlxState
 	public static var tweenss:Map<String, FlxTween> = new Map<String, FlxTween>();
 	public static var soundss:Map<String, FlxSound> = new Map<String, FlxSound>();
 	public static var musicc:Map<String, FlxSound> = new Map<String, FlxSound>();
+	public static var cameraa:Map<String, FlxCamera> = new Map<String, FlxCamera>();
+	public static var buttonn:Map<String, ButtonGame> = new Map<String, ButtonGame>();
 
 	public static var init:PlayState = null;
 

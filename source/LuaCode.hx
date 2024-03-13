@@ -1,15 +1,6 @@
 package;
 
-import api.General;
-import api.Haxe;
-import api.Input;
-import api.Save;
-import api.Sound;
-import api.Sprite;
-import api.System;
-import api.Text;
-import api.Tween;
-import api.Video;
+import api.*;
 import llua.Lua;
 import llua.LuaL;
 import llua.State;
@@ -53,6 +44,7 @@ class LuaCode
 		System.init();
 		General.init();
 		Tween.init();
+		Button.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic

@@ -18,6 +18,14 @@ class Text
 			PlayState.textss.set(tag, text);
 			text.active = true;
 		});
+		GetLua.enter.addcallback("setCamText", function(tag:String, camAlive:String)
+		{
+			if (PlayState.textss.exists(tag))
+			{
+				var text:TextGame = PlayState.textss.get(tag);
+				text.cameras = [PlayState.cameraa.get(camAlive)];
+			}
+		});
 		GetLua.enter.addcallback("scaleText", function(tag:String, x:Float = 0, y:Float = 0)
 		{
 			if (PlayState.textss.exists(tag))

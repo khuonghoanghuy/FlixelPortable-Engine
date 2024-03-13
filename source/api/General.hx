@@ -1,5 +1,7 @@
 package api;
 
+import flixel.FlxObject;
+
 class General
 {
 	public static function init():Void
