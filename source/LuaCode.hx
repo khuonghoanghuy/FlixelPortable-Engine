@@ -45,6 +45,7 @@ class LuaCode
 		General.init();
 		Tween.init();
 		Button.init();
+		Camera.init();
 	}
 
 	public function call(event:String, args:Array<Dynamic>):Dynamic
